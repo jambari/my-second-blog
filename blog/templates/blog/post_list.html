@@ -5,24 +5,15 @@
     <title>Jambari's Blog</title>
 </head>
 <body>
-<di>
-    <h1><a href="">Jambari's Blog</a> </h1>
-</di>
-<di>
-    <p>published: 08.05.2016, 22:13</p>
-    <h2><a href="">My first Post</a> </h2>
-    <p>
-        "But I must explain to you how all this mistaken idea of
-        denouncing pleasure and praising pain was born and I will
-        give you a complete account of the system, and expound the
-        actual teachings of the great explorer of the truth, the
-        master-builder of human happiness. No one rejects, dislikes,
-        or avoids pleasure itself, because it is pleasure, but because
-        those who do not know how to pursue pleasure rationally encounter
-        consequences that are extremely painful. Nor again is there anyone
-        who loves or pursues or desires to obtain pain of itself, because
-        
-    </p>
-</di>
+    <div>
+        <h1><a href="">Jambari's Blog</a> </h1>
+    </div>
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a> </h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+    {% endfor %}
 </body>
 </html>
