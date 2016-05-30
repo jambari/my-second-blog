@@ -11,19 +11,18 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <div class="container">
+    <div class="container yellow darken-3 ">
       <div class="">
-        <h1>Django Girls Blog</h1>
-      </div>
-      <div class="divider">
-      </div>
-      <div class="section">
         {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><i class="material-icons">add</i></a>
+        <a href="{% url 'post_draft_list' %}"><span class="yellow-text text-lighten-5"><i class="material-icons">edit</i></span></a>
+        <a href="{% url 'post_new' %}" class="top-menu"><i class="material-icons yellow-text text-lighten-5">add</i></a>
+        <p>Hello {{ user.username }}<small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+        {% else %}
+        <a href="{% url 'login' %}"><i class="material-icons yellow-text text-lighten-5">lock</i></a>
         {% endif %}
+        <h1><a href="/" class=""><span class="yellow-text text-lighten-5">Django Girls Blog</span></a></h1>
       </div>
       <div class="divider">
-
       </div>
     </div>
       <div class="container">
