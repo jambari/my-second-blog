@@ -18,7 +18,9 @@
       <div class="divider">
       </div>
       <div class="section">
-        <a href="{% url 'post_new' %}" class="top-menu"><i class="material-icons">add</i></span></a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><i class="material-icons">add</i></a>
+        {% endif %}
       </div>
       <div class="divider">
 
